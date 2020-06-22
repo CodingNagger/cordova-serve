@@ -104,11 +104,11 @@ module.exports = function (opts) {
 function getBrowser (target, dataDir) {
     dataDir = dataDir || 'temp_chrome_user_data_dir_for_cordova';
 
-    const chromeArgs = ` --user-data-dir=/tmp/${dataDir}`;
+    const chromeArgs = ` --user-data-dir="/tmp/${dataDir}"`;
     const browsers = {
         win32: {
             ie: 'iexplore',
-            chrome: `chrome --user-data-dir=%TEMP%\\${dataDir}`,
+            chrome: `chrome --user-data-dir="%TEMP%\\${dataDir}"`,
             safari: 'safari',
             opera: 'opera',
             firefox: 'firefox',
